@@ -13,6 +13,7 @@ public class ChoiceSideWalk : MonoBehaviour
 
     public GameObject result1;
     public GameObject result2;
+    public GameObject oneMoreObj;
 
     void Awake()
     {
@@ -30,6 +31,7 @@ public class ChoiceSideWalk : MonoBehaviour
     {
         choiceQuestion.SetActive(false);
         result2.SetActive(true);
+        oneMoreObj.SetActive(true);
 
     }
 
@@ -38,5 +40,6 @@ public class ChoiceSideWalk : MonoBehaviour
         result1.SetActive(false);
         result2.SetActive(false);
         choiceQuestion.SetActive(true);
+        oneMoreObj.SetActive(false);
     }
 }
