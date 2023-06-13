@@ -23,6 +23,7 @@ public class BadNPCVR : MonoBehaviour
     BoxCollider carparkCollider;
     
     public float stoppingDistance;
+    public Vector3 lastPosition;
 
     void Awake()
     {
@@ -57,7 +58,7 @@ public class BadNPCVR : MonoBehaviour
 
     void Update()
     {
-        if (carparkCollider.bounds.Contains(target.position))
+        if (carparkCollider.bounds.Contains(target.position) && !player.iscompletedStamp[interactionIndex])
         {
             // Player가 Carpark 영역에 들어온 경우 NPC를 쫓아갑니다.
             nav.SetDestination(target.position);
@@ -103,6 +104,8 @@ public class BadNPCVR : MonoBehaviour
         HideAllPanel();
         BadCorrectPanel.SetActive(true);
         player.iscompletedStamp[interactionIndex] = true;
+        transform.position = lastPosition;
+        nav.isStopped = true;
     }
 
     public void WrongAnswerChoice()

@@ -86,7 +86,6 @@ public class Player : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
         //PlayerPrefs.SetInt("MaxScore", 112500);
-        Debug.Log("다시 깨어나는가");
     }
     
     void Update()
